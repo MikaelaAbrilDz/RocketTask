@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlanetMover : MonoBehaviour
 {
+    [SerializeField] float speed = 5f;
     Rigidbody rb;
     void Start()
     {
@@ -9,8 +10,8 @@ public class PlanetMover : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.position += transform.right * Time.deltaTime;
+        rb.linearVelocity += Vector3.right * speed;
     }
 }
